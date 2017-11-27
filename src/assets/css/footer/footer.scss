@@ -1,0 +1,12 @@
+@import "../common";
+.footer-box{
+  > .flex-box-around > div{
+    height: remChange(100);
+    color: #fff;
+    text-align: center;
+  }
+  .current{
+    background-color: antiquewhite;
+  }
+
+}

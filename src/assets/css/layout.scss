@@ -1,0 +1,28 @@
+@import "reset";
+@import "common";
+.box-page{
+  .header-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: remChange(750);
+    height: remChange(100);;
+    background-color: rgba(0,0,0,.4);
+  }
+  .footer-box{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: remChange(750);
+    background-color: rgba(0,0,0,.4);
+  }
+  .content-box{
+    width: remChange(750);
+    padding-top: remChange(100);
+  }
+}
+.box-router{
+  width: remChange(750);
+  min-height: remChange(200);
+  background-color: rgb(0,0,0);
+}
