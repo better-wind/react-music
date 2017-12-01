@@ -1,0 +1,13 @@
+@import "../../assets/css/common";
+.footer-box{
+  background-color: rgba(0,0,0,.9);
+  > .flex-box-around > div{
+    height: remChange(100);
+    color: rgb(190,190,190);
+    text-align: center;
+    &.current{
+      color: rgb(255,255,255);
+    }
+  }
+
+}

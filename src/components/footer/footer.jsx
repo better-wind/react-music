@@ -1,27 +1,33 @@
 import React,{ Component } from 'react';
 import  {render} from 'react-dom'
-import 'a@/css/footer/footer'
+import './footer.scss'
 import { connect } from 'react-redux'
-import * as action from '../../Redux/Action/menu'
+import { bindActionCreators } from 'redux'
+import { Link } from 'react-router-dom'
+import * as menuActions from '../../Redux/Action/menu';
 class Icon extends Component {
     constructor(){
         super()
     }
     changeMenu(){
-        const { index ,onChangeMenu} = this.props
+        const { link ,index,onChangeMenu} = this.props
         onChangeMenu(index)
     }
+    createMarkup(iconUrl){
+        return {__html: iconUrl};
+    }
     render(){
-        const { iconUrl,iconTag,current} = this.props
+        const { iconUrl,iconTag,current,link} = this.props
         return (
             <div onClick={()=>this.changeMenu()}  className={current ? 'icon-box current' : 'icon-box'} >
-                <div className="icon">
-                    <img src = {iconUrl}  alt=""/>
-                </div>
-                <div className="tag">
-                    <span>{ iconTag }{ current }</span>
-                </div>
-
+                <Link to={link}>
+                    <div className="icon">
+                        <i className="music-icon" dangerouslySetInnerHTML={this.createMarkup(iconUrl)}></i>
+                    </div>
+                    <div className="tag">
+                        <span>{ iconTag }</span>
+                    </div>
+                </Link>
             </div>
         )
     }
@@ -31,23 +37,27 @@ class Footer extends React.Component {
         super()
     }
     render(){
-        const { currentMenu, callChangeMenu } = this.props
+        const { currentMenu, menuAction } = this.props
         const list = [
             {
-                url:require('a@/image/icon/user.png'),
-                tag:'发现音乐'
+                url:'&#xe648;',
+                tag:'发现音乐',
+                link:'/findMusic'
             },
             {
-                url:require('a@/image/icon/user.png'),
-                tag:'我的音乐'
+                url:'&#xe64d;',
+                tag:'我的音乐',
+                link:'/mineMusic'
             },
             {
-                url:require('a@/image/icon/user.png'),
-                tag:'朋友'
+                url:'&#xe602;',
+                tag:'朋友',
+                link:'/friendManage'
             },
             {
-                url:require('a@/image/icon/user.png'),
-                tag:'账号'
+                url:'&#xe600;',
+                tag:'账号',
+                link:'/accountManage'
             }
         ]
         return (
@@ -59,8 +69,9 @@ class Footer extends React.Component {
                                      index={index}
                                      iconUrl={item.url}
                                      iconTag={item.tag}
-                                     current={currentMenu == index ? true : false}
-                                     onChangeMenu={callChangeMenu}
+                                     link={item.link}
+                                     current={currentMenu == index ? true : false }
+                                     onChangeMenu={menuAction.changeMenu}
                         >
                         </Icon>
                     })
@@ -77,5 +88,9 @@ export default connect(
           currentMenu
       }
     },
-    action
+    (dispatch) => {
+        return {
+            menuAction: bindActionCreators(menuActions, dispatch)
+        }
+    }
 )(Footer)

@@ -1,9 +1,7 @@
-const Menu = (state,action) => {
-    state = {
-        currentMenu:0,
-    }
+import * as MenuTypes from '../Constant/menu';
+const Menu = (state = {currentMenu:0},action) => {
     switch(action.type){
-        case 'SELECTMENU':
+        case MenuTypes.SELECT_MENU:
             return {
                 currentMenu:action.data
             }

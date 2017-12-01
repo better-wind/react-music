@@ -1,0 +1,103 @@
+@import "../../assets/css/common";
+div[data-v-songslist]{
+  .play-list-box{
+    width: remChange(750);
+    li{
+      display: flex;
+      justify-content: flex-start;
+      width: remChange(750);
+      height: remChange(240);
+      margin-top: remChange(4);
+      border-bottom: remChange(1) solid $border-color;
+      >.pic-box{
+        position: relative;
+        width: remChange(240);
+        height:remChange(240);
+        background-color: rgba($primary-color,.5);
+        overflow: hidden;
+        >.pic-wrap{
+          width: remChange(240);
+          height:remChange(240);
+          overflow: hidden;
+          img{
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+          }
+        }
+        >.play-count-box{
+          position: absolute;
+          top:0;
+          right: remChange(10);
+          height: remChange(30);
+          line-height: remChange(30);
+          font-size: remChange(20);
+          color: rgba($white-color,.8);
+
+          i{
+            margin-right: remChange(6);
+          }
+        }
+        >.play-icon-hot{
+          position: absolute;
+          top:0;
+          left:0;
+          width: remChange(80);
+          height: remChange(80);
+
+
+          text-align: center;
+          line-height: remChange(80);
+          color: rgba($white-color,.8);
+
+          transform:translate3d(remChange(-40),remChange(-40),0) rotateZ(-45deg);
+
+          background-color: $sign-bg-color;
+
+          >i{
+            vertical-align: text-top;
+          }
+        }
+      }
+      >.msg-box{
+        width: remChange(500);
+        height: remChange(240);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: remChange(40) remChange(20) remChange(20);
+        >.title-box{
+          >.title{
+            font-size: remChange(28);
+          }
+          >.author{
+            margin-top: remChange(10);
+            color: $font-tint-color;
+            font-size: remChange(24);
+            i{
+              margin-left: remChange(10);
+              color: $primary-color;
+            }
+          }
+        }
+        >.tag{
+          color: $font-tint-color;
+          >.tag-icon{
+            display: inline-block;
+            padding: remChange(2);
+            margin-right: remChange(4);
+            height: remChange(20);
+            line-height: remChange(20);
+            font-size: remChange(20);
+            color:$primary-color;
+            vertical-align: middle;
+            border:remChange(1) solid $primary-color;
+            border-radius: remChange(4);
+            transform: scale(0.8);
+          }
+        }
+      }
+    }
+  }
+}

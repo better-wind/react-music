@@ -2,7 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 
-import Index from '@/page/Index'
+import RouteConfig from './Router/Router'
 import store from './Redux/Store'
 import 'a@/css/layout.scss'
 import 'a@/js/console'
@@ -10,7 +10,7 @@ import 'a@/js/console'
 
 render(
     <Provider store={store}>
-        <Index></Index>
+        {RouteConfig}
     </Provider>,
     document.getElementById('app')
 )

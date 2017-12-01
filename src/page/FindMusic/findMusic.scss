@@ -1,0 +1,80 @@
+@import "../../assets/css/common";
+div[data-v-findmusic]{
+  .swipe-box{
+    position: relative;
+    width: remChange(750);
+    height: remChange(250);
+    overflow: hidden;
+    background-color: rgba($primary-color, 0.7);
+    >ul{
+      position: relative;
+      width: remChange(750);
+      height: remChange(250);
+      >li{
+        position: absolute;
+        top:0;
+        width: remChange(750);
+        height: remChange(250);
+      }
+    }
+    img{
+      width: remChange(750);
+      height: remChange(250);
+    }
+    .carousel-point-box{
+      position: absolute;
+      width: remChange(250);
+      height:remChange(40);
+      bottom: 0;
+      left: remChange(250);
+      text-align: center;
+      >span{
+        display: inline-block;
+        width: remChange(10);
+        height: remChange(10);
+        margin: 0 remChange(4);
+        border-radius: 50%;
+        transition: all 0.75s ease;
+        background-color: rgba($border-color,.8);
+        &.current{
+          background-color: rgba($primary-color,.8);
+        }
+      }
+    }
+  }
+  .recommend-box{
+    width: remChange(750);
+    height: remChange(200);
+    align-items: center;
+    justify-content: center;
+    border-bottom: remChange(1) solid $border-color;
+    >div{
+      width: remChange(150);
+      height: remChange(150);
+      margin: 0 remChange(14);
+      div{
+        margin: 0 auto;
+        &.icon-box{
+          width: remChange(100);
+          height: remChange(100);
+          text-align: center;
+          line-height: remChange(100);
+          color: $primary-color;
+          border-radius: 50%;
+          border:1px solid $primary-color;
+          i{
+            font-size: remChange(50);
+          }
+        }
+        &.icon-sign{
+          width: remChange(100);
+          height: remChange(30);
+          line-height: remChange(30);
+          margin-top: remChange(15);
+          text-align: center;
+        }
+      }
+
+    }
+  }
+}

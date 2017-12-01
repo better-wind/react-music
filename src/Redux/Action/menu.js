@@ -1,12 +1,7 @@
-
-const changeMenu = data => {
+import * as MenuTypes from '../Constant/menu';
+export const changeMenu = data => {
     return {
-        type: 'SELECTMENU',
+        type: MenuTypes.SELECT_MENU,
         data
-    }
-}
-export const callChangeMenu = (data)=>{
-    return dispatch => {
-        dispatch(changeMenu(data))
     }
 }

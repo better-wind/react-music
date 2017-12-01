@@ -1,0 +1,61 @@
+@import "../../assets/css/common";
+.header-box{
+  z-index: 9;
+  >.title{
+    line-height: remChange(80);
+    text-align: center;
+    font-size: remChange(36);
+    color: $white-color;
+  }
+  >.search-header-box{
+    height: remChange(80);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    position: relative;
+    >div{
+      &.search-input{
+        width: remChange(540);
+        height: remChange(50);
+        padding: 0 remChange(10);
+        line-height: remChange(50);
+        border-radius: remChange(50);
+        background-color: $white-color;
+        font-size: remChange(24);
+        overflow: hidden;
+        >i{
+          color: $font-tint-color;
+        }
+        >input{
+          width: remChange(480);
+          height: remChange(50);
+          border: none;
+          appearance:none;
+          text-indent: remChange(10);
+          &::-webkit-input-placeholder {
+            line-height: remChange(30);
+          }
+        }
+
+      }
+      &.current-box{
+        position: absolute;
+        top:0;
+        right:remChange(20);
+        width: remChange(40);
+        height: remChange(80);
+        line-height: remChange(76);
+        color: rgb(255,255,255);
+        font-size: remChange(46);
+      }
+    }
+  }
+  >.header-color{
+    background-color: $primary-color;
+  }
+  >.header-trans{
+    color: $font-color;
+    background-color: $primary-color;
+  }
+
+}
